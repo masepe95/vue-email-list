@@ -22,6 +22,35 @@
     <!-- MY JS -->
     <script defer src="./js/script.js"></script>
 </head>
-<body>
-</body>
+    <body class="bg-secondary-subtle">
+
+        <div id="root" class="container-fluid p-5">
+    
+            <!-- TITLE -->
+            <h1 class="text-center mb-3">Vue Email List</h1>
+            
+    
+            <!-- LIST -->
+            <ul v-if="!isLoading"
+                class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-5 gy-3 list-unstyled justify-content-center">
+    
+                <!-- V-FOR -->
+                <li class="col" v-for="email in emails">
+                    <div class="card my-card">
+                        <div class="card-body">
+                            {{email}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+    
+            <!-- LOADER SECTION -->
+            <div v-else class="text-center pt-5">
+                <i class=" fa-solid fa-spinner fa-spin fa-2xl"></i>
+            </div>
+    
+        </div>
+    
+    
+    </body>
 </html>
